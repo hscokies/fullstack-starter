@@ -1,4 +1,9 @@
-import type { Preview } from '@storybook/vue3-vite';
+import { type Preview, setup } from '@storybook/vue3-vite';
+import { classNamePlugin } from '@/shared/plugins/class-name.ts';
+
+setup(app => {
+    app.use(classNamePlugin);
+});
 
 const preview: Preview = {
     parameters: {
@@ -6,6 +11,14 @@ const preview: Preview = {
             matchers: {
                 color: /(background|color)$/i,
                 date: /Date$/i,
+            },
+        },
+        backgrounds: {
+            options: {
+                dark: {
+                    name: 'Dark',
+                    value: '#232634',
+                },
             },
         },
     },

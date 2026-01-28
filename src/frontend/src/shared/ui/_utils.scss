@@ -1,0 +1,16 @@
+@use 'sass:list';
+@use 'src/shared/ui/variables' as vars;
+
+@mixin transitions($properties...) {
+    $transition-properties: ();
+
+    @each $property in $properties {
+        $transition-properties: list.append(
+            $transition-properties,
+            $property vars.$transition-time vars.$transition-function,
+            comma
+        );
+    }
+
+    transition: $transition-properties;
+}
