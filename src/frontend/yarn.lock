@@ -3304,6 +3304,11 @@ vue-docgen-api@^4.75.1:
     ts-map "^1.0.3"
     vue-inbrowser-compiler-independent-utils "^4.69.0"
 
+vue-feather@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/vue-feather/-/vue-feather-2.0.0.tgz#5bcae9908ab7b3ab3d1e821f8fd677f49830e4b4"
+  integrity sha512-GBvxJWu2ycGTpB8duYWnc5S/TwWPPb2G5Ft2NbkwK1vZkUDUOTYqIb4Nh1HOL6A37Isfrd0Guun0lesS97PfxA==
+
 vue-i18n@11.2.8:
   version "11.2.8"
   resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-11.2.8.tgz#f431b583134776dcf59e59250c5231e4eaed8404"
