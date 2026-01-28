@@ -1,0 +1,81 @@
+/**********************************
+  Catppuccin Frappé – Base Palette
+**********************************/
+$ctp-rosewater: #f2d5cf;
+$ctp-flamingo: #eebebe;
+$ctp-pink: #f4b8e4;
+$ctp-mauve: #ca9ee6;
+$ctp-red: #e78284;
+$ctp-maroon: #ea999c;
+$ctp-peach: #ef9f76;
+$ctp-yellow: #e5c890;
+$ctp-green: #a6d189;
+$ctp-teal: #81c8be;
+$ctp-sky: #99d1db;
+$ctp-sapphire: #85c1dc;
+$ctp-blue: #8caaee;
+$ctp-lavender: #babbf1;
+
+$ctp-text: #c6d0f5;
+$ctp-subtext1: #b5bfe2;
+$ctp-subtext0: #a5adce;
+$ctp-overlay2: #949cbb;
+$ctp-overlay1: #838ba7;
+$ctp-overlay0: #737994;
+$ctp-surface2: #626880;
+$ctp-surface1: #51576d;
+$ctp-surface0: #414559;
+$ctp-base: #303446;
+$ctp-mantle: #292c3c;
+$ctp-crust: #232634;
+
+/***********************
+  Semantic Color Tokens
+***********************/
+
+/* Brand */
+$color-primary: $ctp-mauve;
+$color-primary-hover: $ctp-lavender;
+$color-primary-active: $ctp-pink;
+$color-accent: $ctp-blue;
+
+/* Feedback */
+$color-success: $ctp-green;
+$color-warning: $ctp-yellow;
+$color-error: $ctp-red;
+$color-info: $ctp-sky;
+
+/* Text */
+$color-text-primary: $ctp-text;
+$color-text-secondary: $ctp-subtext1;
+$color-text-muted: $ctp-subtext0;
+$color-text-inverse: $ctp-crust;
+$color-text-disabled: $ctp-overlay1;
+
+/* Backgrounds */
+$color-bg-app: $ctp-crust;
+$color-bg-page: $ctp-base;
+$color-bg-card: $ctp-surface0;
+$color-bg-hover: $ctp-surface1;
+$color-bg-overlay: rgba($ctp-crust, 0.8);
+
+/* Borders & Dividers */
+$color-border-default: $ctp-surface2;
+$color-border-muted: $ctp-overlay0;
+
+/* Controls */
+$color-control-bg: $ctp-surface0;
+$color-control-bg-hover: $ctp-surface1;
+$color-control-bg-disabled: $ctp-surface2;
+$color-control-border: $ctp-overlay0;
+$color-control-border-focus: $ctp-blue;
+
+/* States */
+$color-focus-ring: rgba($ctp-blue, 0.5);
+$color-selection-bg: rgba($ctp-lavender, 0.25);
+$color-selection-text: $ctp-text;
+
+/* Disabled */
+$color-disabled-bg: $ctp-surface2;
+$color-disabled-text: $ctp-overlay1;
+$color-disabled-border: $ctp-overlay0;

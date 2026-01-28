@@ -1,6 +1,3 @@
 {
-    "Title": {
-        "SignIn": "Sign in"
-    },
-    "Common": {}
+    "Test": "Hello world!"
 }
