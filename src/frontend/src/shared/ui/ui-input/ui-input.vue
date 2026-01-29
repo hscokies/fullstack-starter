@@ -37,7 +37,11 @@ function onFocusIn(e: FocusEvent) {
 </script>
 
 <template>
-    <div :class="$cn({ focused, disabled, readonly, invalid })" @focusin="onFocusIn" @focusout="onBlur">
+    <div
+        :class="$cn({ disabled, readonly, invalid, focused: focused && !disabled && !readonly })"
+        @focusin="onFocusIn"
+        @focusout="onBlur"
+    >
         <div v-if="$slots.prefix" :class="$cn('prefix')">
             <slot name="prefix" />
         </div>
@@ -57,26 +61,25 @@ function onFocusIn(e: FocusEvent) {
 </template>
 
 <style lang="scss" scoped>
-@use 'src/shared/ui/utils' as utils;
-@use 'src/shared/ui/variables' as vars;
+@use '.' as styles;
+@use 'src/shared/ui/border-radius' as border-radius;
+@use 'src/shared/ui/typography' as typography;
+@use 'src/shared/ui/spacing' as spacing;
 @use 'src/shared/ui/colors' as colors;
-
-$height: 33px;
-$border: 2px solid;
-$border-radius: 4px;
-$box-shadow: 0 0 0 2px;
-$font-size: 16px;
-$padding: 7px 10px;
+@use 'src/shared/ui/utils' as utils;
+@use 'src/shared/ui/variables' as variables;
 
 .ui-input {
+    $root: &;
+
     display: inline-flex;
     align-items: stretch;
-    height: var(--ui-input-height, $height);
-    background: var(--ui-input-background, colors.$color-control-bg);
-    border: $border var(--ui-input-border, colors.$color-control-border);
-    color: var(--ui-input-text-color, colors.$color-text-primary);
-    border-radius: var(--ui-input-border-radius, $border-radius);
-    font-size: var(--ui-input-font-size, $font-size);
+    height: var(--ui-input-height, variables.$input-height);
+    background: var(--ui-input-background, colors.$surface-element-0);
+    border: var(--ui-input-border, variables.$border);
+    color: var(--ui-input-text-color, colors.$label-1);
+    border-radius: var(--ui-input-border-radius, border-radius.$border-radius-md);
+    font-size: var(--ui-input-font-size);
 
     @include utils.transitions(background-color, border-color, box-shadow);
 
@@ -93,7 +96,7 @@ $padding: 7px 10px;
         background: transparent;
         color: inherit;
         font-size: inherit;
-        padding: var(--ui-input-field-padding, $padding);
+        padding: var(--ui-input-field-padding, spacing.$spacing-2);
 
         &:focus {
             outline: none;
@@ -104,7 +107,7 @@ $padding: 7px 10px;
         }
 
         &::placeholder {
-            color: colors.$color-text-muted;
+            color: var(--ui-input-placeholder-color, rgba(colors.$label-1, 0.5));
         }
 
         &[type='number']::-webkit-outer-spin-button,
@@ -118,38 +121,29 @@ $padding: 7px 10px;
         }
     }
 
-    &:hover {
-        background: var(--ui-input-hover-background, colors.$color-control-bg-hover);
-    }
+    @include styles.variant(
+        $root,
+        var(--ui-input-border-color, colors.$overlay-0),
+        var(--ui-input-focus-border-color, colors.$cpt-mauve),
+        var(--ui-input-focus-box-shadow-color, rgba(colors.$cpt-mauve, 0.25))
+    );
 
     &--invalid {
-        border: $border var(--ui-input-invalid-border, colors.$color-error);
-    }
-
-    &--focused {
-        background: var(--ui-input-focus-background, colors.$color-control-bg);
-        border: $border var(--ui-input-focus-border, colors.$color-control-border-focus);
-        box-shadow: var(--ui-input-focus-shadow, $box-shadow colors.$color-focus-ring);
-    }
-
-    &--invalid#{&}--focused {
-        background: var(--ui-input-invalid-focus-background, colors.$color-control-bg);
-        border: $border var(--ui-input-invalid-focus-border, colors.$color-error);
-        box-shadow: var(--ui-input-invalid-focus-shadow, $box-shadow colors.$color-error);
+        @include styles.variant(
+            $root,
+            var(--ui-input-invalid-border-color, colors.$error),
+            var(--ui-input-invalid-focus-border-color, colors.$error),
+            var(--ui-input-invalid-focus-box-shadow-color, rgba(colors.$error, 0.25))
+        );
     }
 
     &--readonly {
-        pointer-events: none;
-        background: var(--ui-input-readonly-background, colors.$color-control-bg-disabled);
-        border: $border var(--ui-input-readonly-border, colors.$color-control-border);
-        color: var(--ui-input-readonly-color, colors.$color-disabled-text);
+        background: var(--ui-input-readonly-background, colors.$surface-element-2);
     }
 
     &--disabled {
         pointer-events: none;
-        background: var(--ui-input-disabled-background, colors.$color-control-bg-disabled);
-        border: $border var(--ui-input-disabled-border, colors.$color-disabled-border);
-        color: var(--ui-input-disabled-color, colors.$color-disabled-text);
+        opacity: variables.$disabled-opacity;
     }
 }
 </style>

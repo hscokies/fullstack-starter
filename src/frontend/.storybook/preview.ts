@@ -1,5 +1,6 @@
 import { type Preview, setup } from '@storybook/vue3-vite';
 import { classNamePlugin } from '@/shared/plugins/class-name.ts';
+import '@/app/ui/global.scss';
 
 setup(app => {
     app.use(classNamePlugin);
@@ -17,7 +18,7 @@ const preview: Preview = {
             options: {
                 dark: {
                     name: 'Dark',
-                    value: '#232634',
+                    value: '#1e1e2e',
                 },
             },
         },

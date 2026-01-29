@@ -4,7 +4,7 @@ import { createApp } from 'vue';
 import App from './ui/App.vue';
 import { i18n } from '@/shared/i18n';
 import VueFeather from 'vue-feather';
-import '@/app/ui/global.css';
+import '@/app/ui/global.scss';
 
 const app = createApp(App);
 app.component('feather', VueFeather);

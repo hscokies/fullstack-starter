@@ -4,6 +4,9 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 const meta: Meta<typeof UIInput> = {
     title: 'Fields / ui-input',
     component: UIInput,
+    parameters: {
+        backgrounds: { default: 'Dark' },
+    },
     render: args => ({
         components: { 'ui-input': UIInput },
         data: () => ({
