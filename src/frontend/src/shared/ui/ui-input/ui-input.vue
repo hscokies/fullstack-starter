@@ -125,7 +125,7 @@ function onFocusIn(e: FocusEvent) {
         $root,
         var(--ui-input-border-color, colors.$overlay-0),
         var(--ui-input-focus-border-color, colors.$cpt-mauve),
-        var(--ui-input-focus-box-shadow-color, rgba(colors.$cpt-mauve, 0.25))
+        var(--ui-input-focus-box-shadow, variables.$box-shadow rgba(colors.$cpt-mauve, 0.25))
     );
 
     &--invalid {
@@ -133,7 +133,7 @@ function onFocusIn(e: FocusEvent) {
             $root,
             var(--ui-input-invalid-border-color, colors.$error),
             var(--ui-input-invalid-focus-border-color, colors.$error),
-            var(--ui-input-invalid-focus-box-shadow-color, rgba(colors.$error, 0.25))
+            var(--ui-input-invalid-focus-box-shadow, variables.$box-shadow rgba(colors.$error, 0.25))
         );
     }
 
