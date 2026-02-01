@@ -17,11 +17,14 @@ const preview: Preview = {
         backgrounds: {
             options: {
                 dark: {
-                    name: 'Dark',
+                    name: 'dark',
                     value: '#1e1e2e',
                 },
             },
         },
+    },
+    initialGlobals: {
+        backgrounds: { value: 'dark' },
     },
 };
 

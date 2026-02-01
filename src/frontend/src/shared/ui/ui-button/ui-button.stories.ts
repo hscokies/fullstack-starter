@@ -4,9 +4,6 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 const meta: Meta<typeof UIButton> = {
     title: 'Fields / ui-button',
     component: UIButton,
-    parameters: {
-        backgrounds: { default: 'Dark' },
-    },
     render: args => ({
         components: { 'ui-button': UIButton },
         data: () => ({
