@@ -1,3 +1,4 @@
+@use 'src/shared/ui/colors' as colors;
 @use 'src/shared/ui/typography' as typography;
 
 * {
@@ -9,6 +10,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizelegibility;
     margin: 0;
+    color: colors.$body-copy;
     font-size: typography.$font-size-md;
     font-family: "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
